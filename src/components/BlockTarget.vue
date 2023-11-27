@@ -1,5 +1,5 @@
 <template>
-<div v-if="isShowing" class="block">
+<div v-if="isShowing" class="blockTarget" @click="stopTimer">
     click me
 </div>
 </template>
@@ -8,25 +8,38 @@
 import { defineProps, onMounted, ref} from 'vue';
 
 const isShowing = ref(false);
+const timer = ref(null);
+const reactionTime = ref(0);
 
 const props = defineProps({
-    delay: {
-        type: Number,
-    }
-})
+  delay: {
+    type: Number,
+  },
+  onEnd: Function
+});
 
 onMounted(() => {
     setTimeout(() => {
         isShowing.value = true;
+        startTimer();
     }, props.delay);
 });
 
-console.log('delay', props.delay);
+function startTimer() {
+    timer.value = setInterval(() => {
+        reactionTime.value += 10;
+    }, 10);
+}
+
+function stopTimer() {
+    clearInterval(timer.value);
+    props.onEnd(reactionTime.value);
+}
 
 </script>
 
 <style scoped>
-    .block {
+    .blockTarget {
         width: 400px;
         border-radius: 20px;
         background-color: crimson;
