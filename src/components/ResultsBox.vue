@@ -36,6 +36,6 @@ onMounted(() => {
 <style scoped> 
 .rank {
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 500;
 }
 </style>

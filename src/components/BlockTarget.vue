@@ -1,6 +1,6 @@
 <template>
 <div v-if="isShowing" class="blockTarget" @click="stopTimer">
-    click me
+    Click me
 </div>
 </template>
 
@@ -42,10 +42,19 @@ function stopTimer() {
     .blockTarget {
         width: 400px;
         border-radius: 20px;
-        background-color: crimson;
+        font-size: 2rem;
+        background-color: green;
         color: white;
         text-align: center;
         padding: 100px 0;
         margin: 40px auto;
+        font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+        font-weight: 400;
+        user-select: none;
+        cursor:pointer;
+    }
+
+    .blockTarget:hover{
+        background-color: darkgreen;
     }
 </style>

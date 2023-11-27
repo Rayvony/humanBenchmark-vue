@@ -1,7 +1,7 @@
 <template>
   <div class="target" @mousedown="tooSoon">
 <h1> Human Benchmark</h1>
-<button @click="start" :disabled="isPlaying">Start new game</button>
+<button @click="start" :disabled="isPlaying">Start a new game</button>
 <BlockTarget v-if="isPlaying" :delay="delay" :onEnd="handleEnd"/>
 <ResultsBox v-if="score" :score="score"/>
   </div>
@@ -46,7 +46,8 @@ function tooSoon() {
 #app {
   margin: 0;
   height: 100vh;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -55,5 +56,31 @@ function tooSoon() {
 
 .target{
   height: 100vh;
+}
+
+button {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background 0.05s;
+}
+
+button:hover{
+  background: darkgreen;
+}
+
+button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:disabled:hover{
+  background: green;
 }
 </style>
