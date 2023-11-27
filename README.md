@@ -1,24 +1,6 @@
-# human-benchmark-vue
+# Human Benchmark
 
-## Project setup
-```
-npm install
-```
+A simple reaction test app. to start click the "start a new game button", then wait for the box to appear a click it as fast as you can!
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+but don't get gun-ho and click before it appears or your score will be invalidated
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
