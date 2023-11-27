@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<h1> Human Benchmark</h1>
+<button @click="start">Start new game</button>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { ref } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+const isPlaying = ref(false);
+const delay = ref(null);
+
+function start() {
+  delay.value = 2000 + Math.random() * 5000;
+  isPlaying.value = true;
+  console.log('delay', delay.value);
 }
+
+
 </script>
 
 <style>
